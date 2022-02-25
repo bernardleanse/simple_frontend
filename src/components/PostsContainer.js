@@ -1,18 +1,14 @@
-import React from 'react'
-import usePostsAPI from '../hooks/usePostsAPI'
+import React, { useContext } from 'react'
+import { PostsContext } from '../context/postContext'
 import Post from './Post'
 
-const PostsContainer = () => {
+const PostsContainer = ({ posts }) => {
 
-  // what if i want this state in different places, can I store in a hook?
-  // I know i could context it.
-  const posts = usePostsAPI()
-  
   return (
-    <>
-     This is the post container
-     {posts.map(post => <Post data={post} />)}
-    </>
+    <div>
+      This is the post container
+      { posts.map(post => <Post key={post.id} data={post}/>) }
+    </div>
   )
 }
 
