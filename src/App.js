@@ -14,14 +14,14 @@ function App() {
   }, [])
 
   return (
-    // <PostsContext.Provider value={ posts, setPosts }>
+    <PostsContext.Provider value={{ posts, setPosts }}>
       <div className="App">
         <h1>
           Posts
         </h1>
-        <PostsContainer posts={ posts }/>
+        <PostsContainer />
       </div>
-    // </PostsContext.Provider>
+    </PostsContext.Provider>
   );
 }
 

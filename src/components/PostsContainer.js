@@ -2,7 +2,9 @@ import React, { useContext } from 'react'
 import { PostsContext } from '../context/postContext'
 import Post from './Post'
 
-const PostsContainer = ({ posts }) => {
+const PostsContainer = () => {
+
+  const { posts } = useContext(PostsContext)
 
   return (
     <div>
