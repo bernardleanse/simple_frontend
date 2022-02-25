@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import PostAPI from '../lib/postApi'
+import React from 'react'
+import usePostsAPI from '../hooks/usePostsAPI'
 import Post from './Post'
-
 
 const PostsContainer = () => {
 
-  useEffect(() => {
-
-    PostAPI.fetchAll()
-    .then(data => setPosts(data))
-
-  }, [])
-
-  const [posts, setPosts] = useState([])
-
+  // what if i want this state in different places, can I store in a hook?
+  // I know i could context it.
+  const posts = usePostsAPI()
+  
   return (
     <>
      This is the post container
